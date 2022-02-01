@@ -6,7 +6,7 @@ services:
       args:
         NODE_ENV: development
     volumes:
-      - ./:/app
+      - ./:/app:ro #read only = ro
     environment:
       - NODE_ENV=development
     command: npm run dev
