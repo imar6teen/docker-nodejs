@@ -8,3 +8,6 @@ services:
     environment:
       - NODE_ENV=production
     command: npm start
+  nginx:
+    ports:
+      - "80:80"

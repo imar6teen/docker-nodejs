@@ -7,6 +7,17 @@ services:
         NODE_ENV: development
     volumes:
       - ./:/app:ro #read only = ro
+      - /app/node_modules
     environment:
       - NODE_ENV=development
+      - MONGO_USER=root
+      - MONGO_PASSWORD=inipassword
+      - SESSION_SECRET=inisecret
     command: npm run dev
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=inipassword
+  nginx:
+    ports:
+      - "3000:80"
